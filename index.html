@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="visually-hidden">Tip Calculator</h1>
+      <img class="logo" src="images\logo.svg" width="87" height="54" />
+      <form autocomplete="off">
+        <section class="data-input">
+          <h2 class="visually-hidden">Data Input</h2>
+          <fieldset>
+            <div class="data-input__section">
+              <header>
+                <span>Bill</span>
+                <span class="error"></span>
+              </header>
+              <input
+                class="data-input__input data-input__input--dollar"
+                type="text"
+                name="bill"
+                placeholder="0"
+                pattern="([1-9]\d*)(\.(\d{1,2}))?"
+                maxlength="16"
+                required
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="data-input__section data-input__section--grid">
+              <header>
+                <span>Select Tip %</span>
+                <span class="error"></span>
+              </header>
+              <label class="data-input__label">
+                <span class="data-input__label-text">5%</span>
+                <input
+                  class="data-input__input-radio"
+                  type="radio"
+                  name="tip-percentage"
+                  value="5"
+                />
+              </label>
+              <label class="data-input__label">
+                <span class="data-input__label-text">10%</span>
+                <input
+                  class="data-input__input-radio"
+                  type="radio"
+                  name="tip-percentage"
+                  value="10"
+                />
+              </label>
+              <label class="data-input__label">
+                <span class="data-input__label-text">15%</span>
+                <input
+                  class="data-input__input-radio"
+                  type="radio"
+                  name="tip-percentage"
+                  value="15"
+                />
+              </label>
+              <label class="data-input__label">
+                <span class="data-input__label-text">25%</span>
+                <input
+                  class="data-input__input-radio"
+                  type="radio"
+                  name="tip-percentage"
+                  value="25"
+                />
+              </label>
+              <label class="data-input__label">
+                <span class="data-input__label-text">50%</span>
+                <input
+                  class="data-input__input-radio"
+                  type="radio"
+                  name="tip-percentage"
+                  value="50"
+                />
+              </label>
+              <input
+                class="data-input__input data-input__input--custom"
+                type="text"
+                name="custom-tip-percentage"
+                placeholder="Custom"
+                pattern="[1-9](\d)?"
+                maxlength="2"
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="data-input__section">
+              <header>
+                <span>Number of People</span>
+                <span class="error"></span>
+              </header>
+              <input
+                class="data-input__input data-input__input--person"
+                type="text"
+                name="number-of-people"
+                placeholder="0"
+                pattern="[1-9](\d)?"
+                maxlength="2"
+                required
+              />
+            </div>
+          </fieldset>
+        </section>
+        <section class="data-results">
+          <h2 class="visually-hidden">Calculation Results</h2>
+          <div class="data-results__container">
+            <div class="data-results__paragraph">
+              <div class="data-results__desc">
+                <strong class="data-results__name">Tip Amount</strong>
+                <span class="data-results__by">/ person</span>
+              </div>
+              <output
+                id="tip-output"
+                class="data-results__output"
+                for="bill tip-percentage custom-tip-percentage number-of-people"
+                >$0.00</output
+              >
+            </div>
+            <div class="data-results__paragraph">
+              <div class="data-results__desc">
+                <strong class="data-results__name">Total</strong>
+                <span class="data-results__by">/ person</span>
+              </div>
+              <output
+                id="total-output"
+                class="data-results__output"
+                for="bill tip-percentage custom-tip-percentage number-of-people"
+                >$0.00</output
+              >
+            </div>
+          </div>
+          <button type="reset" disabled>reset</button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
